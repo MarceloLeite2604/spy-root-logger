@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.figtreelake</groupId>
-	<artifactId>spyrootlogger</artifactId>
+	<artifactId>spy-root-logger</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<name>Spy Root Logger</name>
-	<description>A JUnit5 extension to assist checking events logged on root logger</description>
+	<description>A JUnit5 extension to assist monitoring Logback log events.</description>
 	<url>https://github.com/MarceloLeite2604/spy-root-logger</url>
 
 	<licenses>
