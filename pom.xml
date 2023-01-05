@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.figtreelake</groupId>
 	<artifactId>spy-root-logger</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>Spy Root Logger</name>
 	<description>A JUnit5 extension to assist monitoring Logback log events.</description>
 	<url>https://github.com/MarceloLeite2604/spy-root-logger</url>
