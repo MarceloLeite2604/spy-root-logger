@@ -80,7 +80,7 @@ class SpyRootLoggerExtensionTest {
     spyRootLoggerExtension.afterEach(mockedExtensionContext);
 
     verify(mockedSpyRootLogger, times(1)).stop();
-    verify(mockedSpyRootLogger, times(1)).clearMessages();
+    verify(mockedSpyRootLogger, times(1)).clearEvents();
   }
 
   @Test

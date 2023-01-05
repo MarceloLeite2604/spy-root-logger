@@ -41,7 +41,7 @@ public class SpyRootLoggerExtension implements BeforeEachCallback, AfterEachCall
 
   @Override
   public void afterEach(ExtensionContext extensionContext) {
-    spyRootLogger.clearMessages();
+    spyRootLogger.clearEvents();
     spyRootLogger.stop();
     logbackRootLogAppenderManager.detach(spyRootLogger);
   }

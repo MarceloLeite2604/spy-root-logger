@@ -87,7 +87,7 @@ class SpyRootLoggerTest {
 
   @Test
   void shouldClearLogEvents() {
-    spyRootLogger.clearMessages();
+    spyRootLogger.clearEvents();
 
     verify(logEventsByLevelMap, times(1)).clear();
   }
