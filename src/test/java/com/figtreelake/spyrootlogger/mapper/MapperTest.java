@@ -10,16 +10,16 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MapperTest {
 
-  private Mapper<Integer, String> mapper;
+  private Mapper<Integer, String> oneWayMapper;
 
-  private Mapper<String, String> mapperImplementation;
+  private Mapper<String, String> twoWayMapper;
 
   @BeforeEach
   void setUp() {
 
-    mapper = new Mapper<>() {};
+    oneWayMapper = value -> null;
 
-    mapperImplementation = new Mapper<>() {
+    twoWayMapper = new Mapper<>() {
 
       @Override
       public String mapTo(String value) {
@@ -35,12 +35,12 @@ class MapperTest {
 
   @Test
   void shouldThrowUnsupportedOperationExceptionWhenInvokingMapTo() {
-    assertThrows(UnsupportedOperationException.class, () -> mapper.mapTo(9));
+    assertThrows(UnsupportedOperationException.class, () -> oneWayMapper.mapTo(9));
   }
 
   @Test
   void shouldThrowUnsupportedOperationExceptionWhenInvokingMapFrom() {
-    assertThrows(UnsupportedOperationException.class, () -> mapper.mapFrom("value"));
+    assertThrows(UnsupportedOperationException.class, () -> oneWayMapper.mapFrom("value"));
   }
 
   @Test
@@ -48,7 +48,7 @@ class MapperTest {
     final var input = Set.of("firstValue", "secondValue");
     final var expected = Set.of("mappedTo-firstValue", "mappedTo-secondValue");
 
-    final var actual = mapperImplementation.mapAllTo(input);
+    final var actual = twoWayMapper.mapAllTo(input);
 
     assertThat(actual).containsAll(expected);
   }
@@ -58,21 +58,21 @@ class MapperTest {
     final var input = Set.of("firstValue", "secondValue");
     final var expected = Set.of("mappedFrom-firstValue", "mappedFrom-secondValue");
 
-    final var actual = mapperImplementation.mapAllFrom(input);
+    final var actual = twoWayMapper.mapAllFrom(input);
 
     assertThat(actual).containsAll(expected);
   }
 
   @Test
   void shouldReturnEmptyListWhenMappingNullValueUsingMapAllTo() {
-    final var actual = mapperImplementation.mapAllTo(null);
+    final var actual = twoWayMapper.mapAllTo(null);
 
     assertThat(actual).isEmpty();
   }
 
   @Test
   void shouldReturnEmptyListWhenMappingNullValueUsingMapAllFrom() {
-    final var actual = mapperImplementation.mapAllFrom(null);
+    final var actual = twoWayMapper.mapAllFrom(null);
 
     assertThat(actual).isEmpty();
   }

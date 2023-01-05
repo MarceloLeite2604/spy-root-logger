@@ -12,6 +12,12 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Optional;
 
+/**
+ * A <a href="https://junit.org/junit5/">JUnit5</a> extension to assist
+ * monitoring <a href="https://logback.qos.ch/">Logback</a> log events.
+ *
+ * @author MarceloLeite2604
+ */
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class SpyRootLoggerExtension implements BeforeEachCallback, AfterEachCallback {
 
@@ -25,6 +31,11 @@ public class SpyRootLoggerExtension implements BeforeEachCallback, AfterEachCall
   @Getter(AccessLevel.PACKAGE)
   private SpyRootLogger spyRootLogger;
 
+  /**
+   * The default constructor.
+   *
+   * @see SpyRootLoggerExtension
+   */
   public SpyRootLoggerExtension() {
     logbackRootLogAppenderManager = new LogbackRootLogAppenderManager();
   }
@@ -56,7 +67,8 @@ public class SpyRootLoggerExtension implements BeforeEachCallback, AfterEachCall
     }
   }
 
-  // Since the object accessibility is immediately returned to its original value, we can suppress Sonar S3011 rule.
+  /* Since the object accessibility is immediately returned to its original
+  value, we can suppress Sonar S3011 rule. */
   @SuppressWarnings("java:S3011")
   private void injectSpyRootLoggerOnField(Object testInstance, Field field) {
     var fieldAccessChanged = false;
