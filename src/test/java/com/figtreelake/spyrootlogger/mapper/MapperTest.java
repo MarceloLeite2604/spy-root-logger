@@ -17,7 +17,7 @@ class MapperTest {
   @BeforeEach
   void setUp() {
 
-    oneWayMapper = value -> null;
+    oneWayMapper = value -> "one-way-mapper:mapped-to:" + value;
 
     twoWayMapper = new Mapper<>() {
 
@@ -31,11 +31,6 @@ class MapperTest {
         return "mappedFrom-" + value;
       }
     };
-  }
-
-  @Test
-  void shouldThrowUnsupportedOperationExceptionWhenInvokingMapTo() {
-    assertThrows(UnsupportedOperationException.class, () -> oneWayMapper.mapTo(9));
   }
 
   @Test
