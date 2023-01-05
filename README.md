@@ -34,7 +34,7 @@ to confirm that events were logged.
       final var responseEntity = foo.handleException(exception);
          
       /* Spy Root Logger can be used to check if there is a log event with 
-      an exception attached. */
+      a specific exception attached. */
       assertThat(spyRootLogger.findEventsByThrowableAttached(exception))
           .isNotEmpty();
     }
@@ -65,6 +65,8 @@ to confirm that events were logged.
     }
   }
 ```
+
+**Note:** Functional examples can be found on [Spy Root Logger Example repository][spy-root-logger-example-repository].
 
 ## Usage
 
@@ -125,5 +127,6 @@ If you liked the project and *really* want to demonstrate your appreciation, you
 [maven-central-repository]: https://mvnrepository.com/repos/central
 [paypal-donation]: https://www.paypal.com/donate/?hosted_button_id=C6LPXWCHGRUVQ
 [spy-root-logger]: ./src/main/java/com/figtreelake/spyrootlogger/SpyRootLogger.java
+[spy-root-logger-example-repository]: https://github.com/MarceloLeite2604/spy-root-logger-example
 [spy-root-logger-extension]: ./src/main/java/com/figtreelake/spyrootlogger/SpyRootLoggerExtension.java
 [spy-root-logger-inject]: ./src/main/java/com/figtreelake/spyrootlogger/SpyRootLoggerInject.java
