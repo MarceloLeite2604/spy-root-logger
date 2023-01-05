@@ -112,9 +112,18 @@ to confirm that events were logged.
       }
    ``` 
 
+## Contributions
+
+Try out the library. If you like the outcome, give a star for its repository, share or talk about it with your IT friends and colleagues. This is a work I have been doing in my spare time and I really would like to see that people appreciate the time I have invested on it.
+
+If you liked the project and *really* want to demonstrate your appreciation, you can send me a "thank you" coffee. 🙂
+
+[![Yellow PayPal Donation button with "donate" text written on it](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)][paypal-donation]
+
 [extend-with]: https://junit.org/junit5/docs/current/user-guide/#extensions-registration-declarative
 [junit5]: https://junit.org/junit5/
 [maven-central-repository]: https://mvnrepository.com/repos/central
+[paypal-donation]: https://www.paypal.com/donate/?hosted_button_id=C6LPXWCHGRUVQ
 [spy-root-logger]: ./src/main/java/com/figtreelake/spyrootlogger/SpyRootLogger.java
 [spy-root-logger-extension]: ./src/main/java/com/figtreelake/spyrootlogger/SpyRootLoggerExtension.java
 [spy-root-logger-inject]: ./src/main/java/com/figtreelake/spyrootlogger/SpyRootLoggerInject.java
